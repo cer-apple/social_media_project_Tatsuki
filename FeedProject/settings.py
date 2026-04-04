@@ -43,6 +43,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'crispy_bootstrap4',
 ]
 
 MIDDLEWARE = [
@@ -132,3 +133,11 @@ STATIC_URL = '/static/'
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 LOGIN_URL = 'users:login'
+
+CRISPY_TEMPLATE_PACK = 'bootstrap4'
+MEDIA_URL = '/'
+MEDIA_ROOT = BASE_DIR / 'images'
+
+# Heroku settings.
+import django_heroku
+django_heroku.settings(locals())
