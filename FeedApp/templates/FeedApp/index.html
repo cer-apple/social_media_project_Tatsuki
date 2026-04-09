@@ -1,12 +1,93 @@
 {% extends "FeedApp/base.html" %}
 
 {% block page_header %}
-    <div class="jumbotron">
-       <h1 class="display-3">Feed</h1>
-            <p class="lead">A Social Network where you can be you.
-            </p>
+<style>
+    .hero-section {
+        background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%);
+        min-height: 80vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        padding: 60px 20px;
+        border-radius: 15px;
+    }
 
-            <a class="btn btn-lg btn-outline-primary" href="{% url 'users:register' %}"
-            role="button">Join Now &raquo;</a>
+    .hero-title {
+        color: #b8c1ec;
+        font-size: 5rem;
+        font-weight: bold;
+        text-shadow: 0 0 20px rgba(184, 193, 236, 0.5);
+        margin-bottom: 20px;
+    }
+
+    .hero-subtitle {
+        color: #eebef3;
+        font-size: 1.5rem;
+        margin-bottom: 40px;
+    }
+
+    .hero-btn {
+        background: linear-gradient(135deg, #eebef3, #b8c1ec);
+        border: none;
+        color: #1a1a2e;
+        padding: 15px 40px;
+        font-size: 1.2rem;
+        border-radius: 50px;
+        font-weight: bold;
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .hero-btn:hover {
+        transform: translateY(-3px);
+        box-shadow: 0 10px 30px rgba(238, 190, 243, 0.4);
+        color: #1a1a2e;
+    }
+
+    .features {
+        display: flex;
+        justify-content: center;
+        gap: 30px;
+        margin-top: 60px;
+        flex-wrap: wrap;
+    }
+
+    .feature-card {
+        background: rgba(255, 255, 255, 0.05);
+        border: 1px solid rgba(184, 193, 236, 0.2);
+        border-radius: 15px;
+        padding: 30px;
+        width: 200px;
+        color: #b8c1ec;
+        text-align: center;
+    }
+
+    .feature-card .icon {
+        font-size: 3rem;
+        margin-bottom: 15px;
+    }
+</style>
+
+<div class="hero-section">
+    <div>
+        <h1 class="hero-title">Feed</h1>
+        <p class="hero-subtitle">A Social Network where you can be you.</p>
+        <a class="btn hero-btn" href="{% url 'users:register' %}">Join Now &raquo;</a>
+
+        <div class="features">
+            <div class="feature-card">
+                <div class="icon">📸</div>
+                <p>Share Photos</p>
+            </div>
+            <div class="feature-card">
+                <div class="icon">💬</div>
+                <p>Connect with Friends</p>
+            </div>
+            <div class="feature-card">
+                <div class="icon">❤️</div>
+                <p>Like & Comment</p>
+            </div>
+        </div>
     </div>
+</div>
 {% endblock page_header %}
